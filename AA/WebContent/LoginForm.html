@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="lib\angular.min.js">
+
+</script>
+<script src="angularDemo.js"></script>
+</head>
+<script>
+app=angular.module("myapp", []).controller("c1",function($scope){
+	
+	$scope.t="Registration Success"
+})
+
+</script>
+
+
+<body ng-app="myapp" ng-init="x=true" ng-controller="c1" >
+<input type="radio" name="gn" ng-click="x=true" checked>
+Registration Form
+<input type="radio" name="gn" ng-click="x=false">
+Login Form
+<br>
+<br>
+<div ng-show="x">
+<form action="p1.html" name="frm2">
+Firstname:<br><input name="t" type="text" required ng-model="tx"><br>
+<span ng-show="frm2.t.$invalid && frm2.t.$touched">Enter first name</span><br>
+Lastname:<br> <input name="r" type="text" required><br>
+<span ng-show="frm2.r.$invalid && frm2.r.$touched">Enter Last name</span><br>
+Email:   <br> <input name="rr" type="email" required><br>
+<span ng-show="frm2.rr.$invalid && frm2.rr.$touched">Enter Email</span><br>
+ <br> <input type="submit" value="Register">
+</form>
+</div>
+
+<div ng-hide="x">
+<form name="frm1" action="">
+Username: <br>  <input name="t1" type="text" ng-model="txt1" required>
+<span ng-show="frm1.t1.$invalid && frm1.t1.$touched">Enter user name</span>
+<br>
+Password: <br>  <input type="password" name="t2" ng-model="txt2" required>
+<span ng-show="frm1.t2.$invalid && frm1.t2.$touched">Enter password</span>
+<br>
+ <br> <input type="submit" value="Login" ng-disabled="frm1.t1.$invalid || frm1.t2.$invalid">
+</form>
+</div>
+</body>
+</html>
