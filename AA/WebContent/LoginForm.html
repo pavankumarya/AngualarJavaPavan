@@ -24,11 +24,11 @@ Login Form
 <br>
 <div ng-show="x">
 <form action="p1.html" name="frm2">
-Firstname:<br><input name="t" type="text" required ng-model="tx"><br>
+Firstname:<br><input name="t" type="text" required ng-model="tx">
 <span ng-show="frm2.t.$invalid && frm2.t.$touched">Enter first name</span><br>
-Lastname:<br> <input name="r" type="text" required><br>
+Lastname:<br> <input name="r" type="text" ng-model="tx1" required>
 <span ng-show="frm2.r.$invalid && frm2.r.$touched">Enter Last name</span><br>
-Email:   <br> <input name="rr" type="email" required><br>
+Email:   <br> <input name="rr" type="email" ng-model="tx2" required>
 <span ng-show="frm2.rr.$invalid && frm2.rr.$touched">Enter Email</span><br>
  <br> <input type="submit" value="Register">
 </form>
