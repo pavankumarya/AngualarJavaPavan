@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+ 
+<body>
+ <div ng-app="java4sApp" ng-controller="java4sCtrl">
+   Welcome to {{ name | java4sFilter }}
+ </div>
+ 
+ <script>
+   angular.module('java4sApp', [])
+      .controller('java4sCtrl', function($scope) {
+          $scope.name = "java4s"
+       })
+       .filter('java4sFilter',function(){
+             return function( str ) {
+                   var revStr = str.split('').reverse();
+                   return revStr[0].toUpperCase() + revStr.join('').slice(1) ;
+              }
+   });
+</script>
+</body>
+</html>

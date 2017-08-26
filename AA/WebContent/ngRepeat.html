@@ -1,0 +1,16 @@
+<html>
+<head>AngularJS ng-repeat Example</head>
+ <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.1/angular.min.js"></script>
+   
+<body ng-app="">
+ 
+<div  ng-init="details=[{name:'James',age:'24'},{name:'Rose',age:'21'}]">
+  <ul>
+    <li ng-repeat="data in details">
+      {{data.name}} - {{data.age}}
+    </li>
+  </ul>
+</div>
+ 
+</body>
+</html>
